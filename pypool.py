@@ -9,8 +9,8 @@ import numpy as np
 
 def main():
     datasize = 5000000000 # ~40GB
-    mindiv = 1 # 1 array of ~40GB
-    maxdiv = 65536 # 65536 arrays of ~610KB
+    mindiv = 1024 # 1 array of ~40GB
+    maxdiv = 1024*16 # 65536 arrays of ~610KB
 
     rank = MPI.COMM_WORLD.rank
     nproc = MPI.COMM_WORLD.size
@@ -36,7 +36,7 @@ def main():
                 print("  Proc {} freed".format(p), flush=True)
             MPI.COMM_WORLD.barrier()
 
-        time.sleep(5)
+        time.sleep(10)
         MPI.COMM_WORLD.barrier()
         if rank == 0:
             print("  All procs done",
