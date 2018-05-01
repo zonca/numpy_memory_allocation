@@ -34,7 +34,7 @@ def main():
 
         div *= 2
 
-    print("Allocate with malloc now")
+    print("Allocate with malloc now", flush=True)
     from cython_malloc import create_array_malloc
     create_array_malloc(datasize)
 
