@@ -16,7 +16,7 @@ def create_arrays(div, ndata):
 def main():
     datasize = 5000000000 # ~40GB
     mindiv = 4096 # 1 array of ~40GB
-    maxdiv = 1024*16 # 65536 arrays of ~610KB
+    maxdiv = 4096*4 # 65536 arrays of ~610KB
 
     div = mindiv
     while div <= maxdiv:
